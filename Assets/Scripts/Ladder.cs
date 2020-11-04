@@ -1,9 +1,11 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using System.Linq;
+using System;
 
 public class Ladder : MonoBehaviour
 {
-    public Text interactUI;
+    public string objectEnabler;
     public BoxCollider2D topCollider;
     private PlayerMovement playerMovement;
     public bool isInRange;
@@ -11,7 +13,6 @@ public class Ladder : MonoBehaviour
     void Awake()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        interactUI = GameObject.FindGameObjectWithTag("InteractionUI").GetComponent<Text>(); 
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class Ladder : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            interactUI.enabled = true;
+            InteractionUI.instance.enabledBy.Add(objectEnabler);
             isInRange = true;
         }
 
@@ -41,10 +42,14 @@ public class Ladder : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            int objectEnablerIndex = InteractionUI.instance.enabledBy.IndexOf(objectEnabler);
+            if(objectEnablerIndex > -1)
+            {
+                InteractionUI.instance.enabledBy.RemoveAt(objectEnablerIndex); 
+            }
             isInRange = false;
             playerMovement.isClimbing = false;
             topCollider.isTrigger=false;
-            interactUI.enabled = false;
         }
     }
 }
