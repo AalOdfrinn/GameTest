@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject settingsWindow;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
 
@@ -40,5 +41,13 @@ public class PauseMenu : MonoBehaviour
         DontDestroyOnLoadScene.instance.RemoveFromDontDestroyOnLoad();
         Resume();
         SceneManager.LoadScene("MainMenu");
+    }
+    public void CloseSettingsWindow()
+    {
+        settingsWindow.SetActive(false);
+    }
+    public void OpenSettingsWindow()
+    {
+        settingsWindow.SetActive(true);
     }
 }

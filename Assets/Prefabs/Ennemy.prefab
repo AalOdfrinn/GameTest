@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a3604c6fe25d9489a974b215d2028d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
   objectToDestroy: {fileID: 2877283288296798291}
 --- !u!1 &2877283287494951116
 GameObject:
@@ -262,6 +263,7 @@ MonoBehaviour:
   waypoint:
   - {fileID: 2877283287260646317}
   - {fileID: 2877283287494951117}
+  sound: {fileID: 8300000, guid: 2d07b0fd58e73b945a47ed04142e1f1b, type: 3}
 --- !u!95 &2877283287650112387
 Animator:
   serializedVersion: 3
@@ -293,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a3604c6fe25d9489a974b215d2028d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 2d07b0fd58e73b945a47ed04142e1f1b, type: 3}
   objectToDestroy: {fileID: 0}
 --- !u!1 &2877283288296798291
 GameObject:

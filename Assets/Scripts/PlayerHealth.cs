@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioClip hitSound;
     public float invincibilityTimeAfterHit = 3f;
     public float invincibilityFlashDelay = 0.2f;
     public SpriteRenderer graphics;
@@ -49,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if(!isInvincible){
+            AudioManager.instance.PlayClipAt(hitSound,transform.position);
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
 
