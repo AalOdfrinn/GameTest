@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsWindow: {fileID: 950097337}
-  levelToLoad: Level01
+  levelToLoad: LevelSelect
 --- !u!114 &1112944282
 MonoBehaviour:
   m_ObjectHideFlags: 0
