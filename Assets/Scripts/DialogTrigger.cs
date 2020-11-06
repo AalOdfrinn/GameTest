@@ -31,6 +31,7 @@ public class DialogTrigger : MonoBehaviour
             {
                 InteractionUI.instance.enabledBy.RemoveAt(objectEnablerIndex); 
             }
+            DialogManager.instance.EndDialog();
         }
         
     }
